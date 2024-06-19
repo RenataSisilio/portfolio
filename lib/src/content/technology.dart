@@ -27,4 +27,16 @@ final class Technology {
             'https://www.gstatic.com/devrel-devsite/prod/vcb16788a46369f41192d8988c5149cea86bddfebb91a7fb85ede926f44da4a35/firebase/images/touchicon-180.png',
         docUrl: 'https://firebase.google.com/',
       );
+
+  factory Technology.cubit() => Technology._(
+        logoUrl:
+            'https://raw.githubusercontent.com/CharlestonRibeiro/Portifolio/main/cubit.png',
+        docUrl: '',
+      );
+
+  factory Technology.modular() => Technology._(
+        logoUrl:
+            'https://miro.medium.com/v2/resize:fit:1400/1*WH0qNKT3RMnvQho1e8H4MQ.png',
+        docUrl: '',
+      );
 }
