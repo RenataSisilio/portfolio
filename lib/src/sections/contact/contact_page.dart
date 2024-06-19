@@ -14,13 +14,18 @@ class ContactPage extends StatelessWidget {
           'Contato',
           style: Theme.of(context).textTheme.headlineLarge,
         ),
-        const SizedBox(height: 80),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            DevContact(Developer.charleston()),
-            DevContact(Developer.renata()),
-          ],
+        const SizedBox(height: 40),
+        Container(
+          width: double.infinity,
+          color: Colors.blue, //Theme.of(context).primaryColor,
+          padding: const EdgeInsets.all(40),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              DevContact(Developer.charleston()),
+              DevContact(Developer.renata()),
+            ],
+          ),
         ),
       ],
     );

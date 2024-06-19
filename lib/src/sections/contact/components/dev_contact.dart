@@ -19,7 +19,9 @@ class DevContact extends StatelessWidget {
         const SizedBox(height: 12),
         Text(
           dev.name,
-          style: Theme.of(context).textTheme.titleLarge,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: Theme.of(context).colorScheme.background,
+              ),
         ),
         const SizedBox(height: 8),
         Row(
@@ -28,7 +30,11 @@ class DevContact extends StatelessWidget {
             ...dev.contact.entries.map(
               (e) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: ContactButton.fromType(e.key, e.value),
+                child: ContactButton.fromType(
+                  e.key,
+                  e.value,
+                  color: Theme.of(context).colorScheme.background,
+                ),
               ),
             ),
           ],
