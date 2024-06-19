@@ -15,7 +15,7 @@ class DevAboutText extends StatelessWidget {
         children: [
           Text(
             dev.name,
-            style: Theme.of(context).textTheme.headlineLarge,
+            style: Theme.of(context).textTheme.displayMedium,
           ),
           const SizedBox(height: 20),
           Text(dev.about),

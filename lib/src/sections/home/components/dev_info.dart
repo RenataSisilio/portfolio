@@ -13,13 +13,16 @@ class DevInfo extends StatelessWidget {
       children: [
         CircleAvatar(
           foregroundImage: NetworkImage(dev.imageUrl),
-          radius: 80,
+          radius: MediaQuery.of(context).size.width / 10,
         ),
         Text(
           dev.name,
-          style: Theme.of(context).textTheme.headlineLarge,
+          style: Theme.of(context).textTheme.displayLarge,
         ),
-        Text(dev.role),
+        Text(
+          dev.role,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
       ],
     );
   }

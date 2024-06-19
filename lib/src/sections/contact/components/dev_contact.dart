@@ -19,7 +19,7 @@ class DevContact extends StatelessWidget {
         const SizedBox(height: 12),
         Text(
           dev.name,
-          style: Theme.of(context).textTheme.headlineSmall,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         const SizedBox(height: 8),
         Row(
