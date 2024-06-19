@@ -18,6 +18,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pageController = PageController();
+    final sectionNames = [..._sections.keys];
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -25,12 +27,33 @@ class MyHomePage extends StatelessWidget {
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         actions: [
-          ..._sections.keys.map(
-            (e) => TextButton(onPressed: () {}, child: Text(e)),
-          )
+          ...sectionNames.map(
+            (e) => TextButton(
+              onPressed: () => pageController.animateToPage(
+                sectionNames.indexOf(e),
+                duration: Durations.long4,
+                curve: Curves.easeOut,
+              ),
+              child: AnimatedBuilder(
+                animation: pageController,
+                builder: (context, _) {
+                  return Text(
+                    e,
+                    style: TextStyle(
+                      fontWeight: !pageController.hasClients ||
+                              pageController.page != sectionNames.indexOf(e)
+                          ? FontWeight.normal
+                          : FontWeight.bold,
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
         ],
       ),
       body: PageView.builder(
+        controller: pageController,
         scrollDirection: Axis.vertical,
         itemCount: _sections.length,
         itemBuilder: (context, index) => _sections.values.elementAt(index),
