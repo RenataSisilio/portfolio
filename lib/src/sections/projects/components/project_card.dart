@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/content/project.dart';
-import 'package:portfolio/src/functions/open_url.dart';
+import 'package:portfolio/src/sections/projects/components/project_dialog.dart';
+import 'package:portfolio/src/sections/projects/components/technologies_row.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard(
@@ -28,7 +29,10 @@ class ProjectCard extends StatelessWidget {
         builder: (context, value, child) {
           return InkWell(
             onHover: (value) => indexNotifier.value = value ? index : -1,
-            onTap: () => openUrlInNewTab(project.repoUrl),
+            onTap: () => showDialog(
+              context: context,
+              builder: (context) => ProjectDialog(project),
+            ),
             child: Stack(
               children: [
                 Image.network(project.coverUrl, fit: BoxFit.cover),
@@ -43,21 +47,9 @@ class ProjectCard extends StatelessWidget {
                               style: Theme.of(context).textTheme.titleLarge,
                             ),
                             const SizedBox(height: 20),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                ...project.technologies.map(
-                                  (e) => Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 4,
-                                    ),
-                                    child: SizedBox.square(
-                                      dimension: heigth * 0.15,
-                                      child: Image.network(e.logoUrl),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            TechnologiesRow(
+                              project: project,
+                              size: heigth * 0.15,
                             ),
                           ],
                         ),
