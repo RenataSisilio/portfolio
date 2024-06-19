@@ -6,6 +6,7 @@ final _technologies = [
   Technology.flutter(),
   Technology.dart(),
   Technology.git(),
+  Technology.rest(),
   Technology.firebase(),
   Technology.cubit(),
   Technology.modular(),

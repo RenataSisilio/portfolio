@@ -20,7 +20,7 @@ final class Project {
   factory Project.rqp() => Project._(
         'Revisa Que Passa',
         coverUrl:
-            'https://raw.githubusercontent.com/CharlestonRibeiro/Portifolio/main/RQP%20cover.png',
+            'https://raw.githubusercontent.com/RenataSisilio/portfolio/main/images/projects/rqp/RQP%20cover.png',
         repoUrl:
             'https://github.com/CharlestonRibeiro/Portifolio?tab=readme-ov-file#2-rqp---revisa-que-passa',
         description:

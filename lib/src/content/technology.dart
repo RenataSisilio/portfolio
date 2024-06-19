@@ -8,41 +8,50 @@ final class Technology {
   factory Technology.flutter() => Technology._(
         'Flutter',
         logoUrl:
-            'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/logo_flutter_1080px_clr_Ov8UUHd.png',
+            'https://raw.githubusercontent.com/RenataSisilio/portfolio/main/images/technologies/flutter.webp',
         docUrl: 'https://flutter.dev/',
       );
 
   factory Technology.dart() => Technology._(
         'Dart',
         logoUrl:
-            'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/dart/dart.png',
+            'https://raw.githubusercontent.com/RenataSisilio/portfolio/main/images/technologies/dart.png',
         docUrl: 'https://dart.dev/',
       );
 
   factory Technology.git() => Technology._(
         'Git',
         logoUrl:
-            'https://seeklogo.com/images/G/git-logo-CD8D6F1C09-seeklogo.com.png',
+            'https://raw.githubusercontent.com/RenataSisilio/portfolio/main/images/technologies/git.png',
         docUrl: 'https://git-scm.com/',
       );
 
   factory Technology.firebase() => Technology._(
         'Firebase',
         logoUrl:
-            'https://www.gstatic.com/devrel-devsite/prod/vcb16788a46369f41192d8988c5149cea86bddfebb91a7fb85ede926f44da4a35/firebase/images/touchicon-180.png',
+            'https://raw.githubusercontent.com/RenataSisilio/portfolio/main/images/technologies/firebase.png',
         docUrl: 'https://firebase.google.com/',
       );
 
   factory Technology.cubit() => Technology._(
         'Cubit',
         logoUrl:
-            'https://raw.githubusercontent.com/CharlestonRibeiro/Portifolio/main/cubit.png',
+            'https://raw.githubusercontent.com/RenataSisilio/portfolio/main/images/technologies/cubit.png',
         docUrl: 'https://bloclibrary.dev/bloc-concepts/#cubit',
       );
 
   factory Technology.modular() => Technology._(
         'Modular',
-        logoUrl: 'https://modular.flutterando.com.br/img/logo.png',
+        logoUrl:
+            'https://raw.githubusercontent.com/RenataSisilio/portfolio/main/images/technologies/modular.png',
         docUrl: 'https://modular.flutterando.com.br/',
+      );
+
+  factory Technology.rest() => Technology._(
+        'API Rest',
+        logoUrl:
+            'https://raw.githubusercontent.com/RenataSisilio/portfolio/main/images/technologies/api_rest.png',
+        docUrl:
+            'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwictPP-quiGAxV1D7kGHW8GD84QFnoECBYQAQ&url=https%3A%2F%2Fdocs.flutter.dev%2Fcookbook%2Fnetworking%2Ffetch-data&usg=AOvVaw04_JfzT4fv4pBbS7s83DSO&opi=89978449',
       );
 }
