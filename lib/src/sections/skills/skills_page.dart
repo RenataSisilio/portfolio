@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/content/technology.dart';
-import 'package:portfolio/src/functions/open_url.dart';
+import 'package:portfolio/src/sections/skills/components/technology_card.dart';
 
-final _technologies = {
+final _technologies = [
   Technology.flutter(),
   Technology.dart(),
   Technology.git(),
   Technology.firebase(),
-};
+  Technology.cubit(),
+  Technology.modular(),
+];
 
 class SkillsPage extends StatelessWidget {
   const SkillsPage({super.key});
@@ -15,6 +17,7 @@ class SkillsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final gridElementHeight = MediaQuery.of(context).size.width * 0.1;
+    final hoverIndex = ValueNotifier(-1);
     return Center(
       child: SingleChildScrollView(
         child: Column(
@@ -27,17 +30,16 @@ class SkillsPage extends StatelessWidget {
             const SizedBox(height: 40),
             Wrap(
               spacing: 80,
-              runSpacing: 80,
+              runSpacing: 40,
               alignment: WrapAlignment.center,
               runAlignment: WrapAlignment.center,
               children: [
                 ..._technologies.map(
-                  (e) => SizedBox(
+                  (e) => TechnologyCard(
+                    e,
+                    indexNotifier: hoverIndex,
                     height: gridElementHeight,
-                    child: InkWell(
-                      onTap: () => openUrlInNewTab(e.docUrl),
-                      child: Image.network(e.logoUrl),
-                    ),
+                    index: _technologies.indexOf(e),
                   ),
                 ),
               ],
