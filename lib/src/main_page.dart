@@ -24,8 +24,10 @@ class MyHomePage extends StatelessWidget {
     final sectionNames = [..._sections.keys];
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar:
-          NavBar(controller: pageController,sectionNames: sectionNames, ),
+      appBar: NavBar(
+        controller: pageController,
+        sectionNames: sectionNames,
+      ),
       body: PageView.builder(
         controller: pageController,
         scrollDirection: Axis.vertical,
